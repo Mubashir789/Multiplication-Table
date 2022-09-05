@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplication Table</title>
+
+    <style>
+        .textbox {
+            border: 3px solid #848484;
+            -webkit-border-radius: 30px;
+            -moz-border-radius: 30px;
+            border-radius: 30px;
+            outline: 0;
+            height: 25px;
+            width: 275px;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+        .button {
+            background-color: #4CAF50;
+            /* Green */
+            border: none;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 50%;
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+    <div style="margin-left: 500px; ">
+        <h1>Multiplication Table</h1>
+    </div>
+
+    <div style="margin-left: 500px;">
+        <form onsubmit="poi(); return false;">
+
+
+            Which Table: <input class="textbox" style="width: 150px;height: 30px; " type="number" id="num1" required>
+            <br>
+            <br>
+            How Many Times: <input class="textbox" style="width: 150px;height: 30px; " type="number" id="num2"
+                value="10">
+            <br>
+            <br>
+            <button class="button" type="submit">Result</button>
+
+            <div style="margin-left:100px;">
+                <h2 id="result1"></h2>
+            </div>
+
+
+        </form>
+    </div>
+
+
+    <script>
+
+        function poi() {
+            let num1 = +document.querySelector('#num1').value
+            let num2 = +document.querySelector('#num2').value
+
+
+            let result1 = document.querySelector('#result1')
+            result1.innerHTML = "";
+
+            for (let i = 1; i <= num2; i++) {
+
+                result1.innerHTML += ` ${num1} X ${i} = ${i * num1} <br>`
+
+            }
+
+        }
+
+
+    </script>
+
+
+</body>
+
+</html>
